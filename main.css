@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: #121614;
+}
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(18, 22, 20, 0.2);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.modal-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-container .modal {
+  max-width: 700px;
+  max-height: 80vh;
+  overflow: auto;
+  background-color: white;
+  border: 3px solid #121614;
+  padding: 2rem;
+  position: relative;
+}
+
+.modal-container .modal .modal__title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  max-width: 85%;
+}
+
+.modal-container .modal .modal__btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  background-color: rgba(164, 177, 170, 0.2);
+}
+
+.modal-container .modal .modal__btn:hover, .modal-container .modal .modal__btn:focus {
+  background-color: #e01541;
+  color: white;
+}
+
+.form-container {
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+.form-container h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.form-container h3 {
+  color: #33ca7f;
+  text-align: center;
+}
+
+.form-container .message {
+  margin: 1rem 0 1.5rem;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.form-container .message.remove-message {
+  background-color: #33ca7f;
+}
+
+.form-container .message.alert-message {
+  background-color: #e01541;
+}
+
+form {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+form [for="title"],
+form [for="note"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: rgba(164, 177, 170, 0.2);
+  font-weight: bold;
+}
+
+form [for="title"] input,
+form [for="title"] textarea,
+form [for="note"] input,
+form [for="note"] textarea {
+  font-size: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+  border: 3px solid #a4b1aa;
+  padding: 0.5rem;
+  color: #121614;
+  width: 100%;
+  resize: none;
+}
+
+form [for="title"] input:focus,
+form [for="title"] textarea:focus,
+form [for="note"] input:focus,
+form [for="note"] textarea:focus {
+  outline: 2px solid #121614;
+}
+
+form [type="submit"] {
+  background-color: #33ca7f;
+  color: white;
+  border: 3px solid transparent;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+form [type="submit"]:hover {
+  outline: none;
+  border: 3px solid rgba(18, 22, 20, 0.5);
+}
+
+.note-container {
+  margin: 2rem auto 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-container .note {
+  border: 3px solid rgba(164, 177, 170, 0.2);
+  padding: 1.5rem;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.note-container .note__title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.note-container .note__body {
+  overflow: hidden;
+  max-height: 8rem;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+}
+
+.note-container .note__btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  gap: 0.5rem;
+}
+
+.note-container .note__btns .note__btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  border: 3px solid transparent;
+}
+
+.note-container .note__btns .note__btn:hover, .note-container .note__btns .note__btn:focus {
+  outline: none;
+  border: 3px solid rgba(18, 22, 20, 0.5);
+}
+
+.note-container .note__btns .note__view {
+  background-color: #33ca7f;
+}
+
+.note-container .note__btns .note__delete {
+  background-color: #e01541;
+}
+
+.note-container .note__btns .note__count {
+  background-color: rgba(164, 177, 170, 0.5);
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Note Taker</title>
+		<link rel="stylesheet" href="main.css" />
+		<script defer src="main.js"></script>
+	</head>
+
+	<body>
+		<div class="modal-container">
+			<div class="modal">
+				<button class="modal__btn">&times;</button>
+				<h2 class="modal__title">MODAL</h2>
+				<p class="modal__body">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nulla nesciunt quia adipisci, ea dignissimos
+					sequi. Nisi ullam labore, soluta architecto blanditiis officiis quia numquam consequuntur minus impedit non.
+					Inventore!
+				</p>
+			</div>
+		</div>
+
+		<div class="form-container">
+			<h1>Note Taker</h1>
+			<h3>Add a new note:</h3>
+			<form>
+				<label for="title"
+					>Title
+					<input type="text" id="title" placeholder="Enter a note title..." />
+				</label>
+				<label for="note"
+					>Note
+					<textarea name="note" id="note" cols="30" rows="10" placeholder="Enter note text..."></textarea>
+				</label>
+				<input type="submit" class="submit" value="Submit" />
+			</form>
+		</div>
+
+		<div class="note-container">
+			<div class="note">
+				<span hidden="">0.13122459341774573</span>
+				<h2 class="note__title">Texto de ejemplo</h2>
+				<p class="note__body">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque excepturi reprehenderit praesentium dolore
+					amet, vitae dolor omnis similique placeat, expedita tenetur ex quaerat dolores cumque, iure natus. Autem
+					nostrum nulla corrupti impedit, minima dolor maxime assumenda quas quia in. Nihil quasi recusandae quaerat
+					incidunt enim. Vero rem nulla harum explicabo eveniet perspiciatis, eaque expedita minima sit enim dolore
+					tenetur assumenda!
+				</p>
+				<div class="note__btns">
+					<button class="note__btn note__view">View Detail</button>
+					<button class="note__btn note__delete">Delete Note</button>
+					<button class="note__btn note__count">Count Vowels</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
